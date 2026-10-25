@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="at.arowkey.dbtool.ui.MainController"
+            stylesheets="@main.css">
+
+    <top>
+        <MenuBar>
+            <Menu text="_File">
+                <MenuItem text="_Reconnect" onAction="#onReconnect"/>
+                <SeparatorMenuItem/>
+                <MenuItem text="Create _Table" onAction="#onCreateTable"/>
+                <SeparatorMenuItem/>
+                <MenuItem text="E_xit" onAction="#onExit"/>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.25">
+            <!-- Left: table list -->
+            <VBox styleClass="sidebar">
+                <Label text="Tables" styleClass="section-title"/>
+                <ListView fx:id="tableList" VBox.vgrow="ALWAYS">
+                    <placeholder>
+                        <Label text="No tables loaded"/>
+                    </placeholder>
+                </ListView>
+            </VBox>
+
+            <!-- Center: table content (later e.g. a TableView) -->
+            <StackPane fx:id="contentPane">
+                <Label text="Select a table to see its content." styleClass="placeholder-text"/>
+            </StackPane>
+        </SplitPane>
+    </center>
+
+    <bottom>
+        <HBox styleClass="status-bar">
+            <Label fx:id="statusLabel" text="Not connected"/>
+        </HBox>
+    </bottom>
+</BorderPane>

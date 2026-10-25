@@ -1,0 +1,16 @@
+# Database connection for Arows DB Tool.
+# Copy this file to "database.properties" in the same folder and fill in your values.
+# database.properties is gitignored, so your password never ends up in Git.
+
+# Database type. Currently supported: postgresql
+db.type=postgresql
+
+# Host name or IP address of the Raspberry Pi
+db.host=192.168.1.50
+
+# Optional; defaults to 5432 for PostgreSQL
+db.port=5432
+
+db.name=mydatabase
+db.user=myuser
+db.password=changeme

@@ -1,0 +1,30 @@
+.sidebar {
+    -fx-padding: 8;
+    -fx-spacing: 6;
+}
+
+.section-title {
+    -fx-font-weight: bold;
+}
+
+.placeholder-text {
+    -fx-text-fill: #888888;
+}
+
+.status-bar {
+    -fx-padding: 4 8;
+    -fx-background-color: #eeeeee;
+    -fx-border-color: #cccccc transparent transparent transparent;
+}
+
+.status-pending {
+    -fx-text-fill: #555555;
+}
+
+.status-ok {
+    -fx-text-fill: #2e7d32;
+}
+
+.status-error {
+    -fx-text-fill: #c62828;
+}
